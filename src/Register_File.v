@@ -14,7 +14,7 @@ module Register_File #(parameter N = 32)(
 	wire [N-1:0] q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, 
 				    q24, q25, q26, q27, q28, q29, q30, q31;
 	
-	encoder Enc(.sel(Write_Register_i), .out(enc));
+	decoder Enc(.sel(Write_Register_i), .out(enc));
 
 	
 	ff_d  R0(.d(Write_Data_i), .clk(clk), .reset(reset), .enable(enc[0]&Reg_Write_i),  .q(q0));
